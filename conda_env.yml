@@ -1,0 +1,11 @@
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - jupyter
+  - jupyterlab
+  - pymc 
+  - arviz 
+  - git 
+  - pip
+  - "r-essentials==4.1.*"
