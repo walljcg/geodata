@@ -9,3 +9,4 @@ dependencies:
   - git 
   - pip
   - "r-essentials==4.1.*"
+  - r-raster
