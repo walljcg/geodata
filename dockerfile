@@ -57,6 +57,8 @@ RUN conda update -n base conda && conda install -y 'tini=0.18.0' && conda instal
 
 RUN mamba env update -n base --file conda_env.yml && mamba clean --all -y
 
+RUN mamba install -c nvidia cuda-nvcc
+
 ADD r_env.R r_env.R
 
 # Install R packages
