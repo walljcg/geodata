@@ -1,10 +1,13 @@
-FROM ubuntu:20.04
+# FROM ubuntu:20.04
+FROM nvidia/cuda:11.0-base
 LABEL MAINTAINER="Jake Wall <jake@maraelephantproject.org>"
 USER root
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
 # Fix DL4006
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
+RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
 
 # install all os packages
 RUN export DEBIAN_FRONTEND="noninteractive" && apt-get update && apt-get -y --no-install-recommends --fix-missing install \
@@ -44,6 +47,7 @@ RUN curl -sSL https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64
 
 ENV PATH /usr/local/bin:$PATH
 ENV PATH /opt/conda/bin:$PATH
+ENV CUDA_DIR /usr/local/cuda
 
 RUN conda init bash
 

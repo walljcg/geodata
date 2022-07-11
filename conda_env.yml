@@ -4,9 +4,14 @@ dependencies:
   - python=3.9
   - jupyter
   - jupyterlab
-  - pymc 
+  - pymc
+  - jax
   - arviz 
   - git 
   - pip
-  - "r-essentials==4.1.*"
+  - "r-essentials"
   - r-raster
+  - r-rgdal
+  - pip:
+    - ecoscope
+    - pyarrow
