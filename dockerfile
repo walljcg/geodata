@@ -1,5 +1,5 @@
 # FROM ubuntu:20.04
-FROM nvidia/cuda:11.0-base
+FROM nvidia/cuda:11.2.0-base-ubuntu20.04
 LABEL MAINTAINER="Jake Wall <jake@maraelephantproject.org>"
 USER root
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
@@ -7,7 +7,7 @@ ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 # Fix DL4006
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
+RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/3bf863cc.pub
 
 # install all os packages
 RUN export DEBIAN_FRONTEND="noninteractive" && apt-get update && apt-get -y --no-install-recommends --fix-missing install \
