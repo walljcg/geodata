@@ -1,5 +1,5 @@
 # FROM ubuntu:20.04
-FROM nvidia/cuda:11.2.0-base-ubuntu20.04
+FROM nvidia/cuda:11.3.0-runtime-ubuntu20.04
 LABEL MAINTAINER="Jake Wall <jake@maraelephantproject.org>"
 USER root
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
