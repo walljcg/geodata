@@ -6,7 +6,6 @@ dependencies:
   - jupyterlab
   - pymc
   - jax
-  - cuda-nvcc
   - arviz 
   - git 
   - pip
